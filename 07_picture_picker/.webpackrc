@@ -1,0 +1,10 @@
+{
+	"env": {
+		"development": {
+			"extraBabelPlugins": [
+				"dva-hmr"
+			]
+		}
+	},
+	"disableCSSModules": true  //是否禁用cssModules
+}
