@@ -1,0 +1,20 @@
+$innerWidth: 960px;
+
+#root {
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .App {
+        flex: 0 1 336px;
+
+        // background-color:rgb(216, 216, 216);
+        .App-title {
+            // text-align: center;
+            font-size: 30px;
+
+            padding: 20px 0;
+        }
+    }
+}

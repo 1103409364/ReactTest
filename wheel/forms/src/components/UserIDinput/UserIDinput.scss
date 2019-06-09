@@ -1,0 +1,68 @@
+$inputColor: #1a73e8;
+
+.UserIDinput {
+    display: flex;
+    text-align: center;
+    // background-color: #9b9b9b;
+    max-width: 336px;
+
+    input {
+        flex: 0 1 336px;
+        line-height: 26px;
+        padding: 13px;
+        border: 1px solid #c7c7c7;
+        border-radius: 5px;
+        outline: none;
+        color: #202124;
+        font: 400 17px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    input.focus {
+        border: 2px solid $inputColor;
+    }
+
+    .UserIDinput-tip {
+        transition: all 0.2s ease-in;
+        font: 400 14px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+        // width: 400px;
+        position: absolute;
+        color: red;
+        top: 130%;
+        margin-top: -11px;
+        background-color: #fff;
+    }
+
+    // 邮箱合法改变提示样式
+    .UserIDinput-tip.legal{
+        top: 50%;
+        right: 13px;
+        width: 20px;
+        height: 20px;
+        font-weight: bold;
+        color: green;
+        border-radius: 50%;
+        border: 2px solid green;
+    }
+
+    position: relative;
+
+    label {
+        position: absolute;
+        left: 20px;
+        transition: all 0.2s ease;
+        padding: 0 3px;
+        top: 50%;
+        margin-top: -11px;
+        background-color: #fff;
+        color: #868686;
+        cursor: text;
+    }
+
+    label.focus {
+        top: 0;
+        font-size: 14px;
+        color: $inputColor;
+    }
+
+}
