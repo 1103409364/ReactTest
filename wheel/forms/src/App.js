@@ -3,7 +3,9 @@ import './App.scss';
 import EmailInput from './components/EmailInput/EmailInput';
 import PhoneInput from './components/PhoneInput/PhoneInput';
 import Password from './components/Password/Password';
-import UserIDinput from './components/UserIDinput/UserIDinput'
+import UserIDinput from './components/UserIDinput/UserIDinput';
+import CustomInput from './components/CustomInput/CustomInput';
+import TextEditor from './components/TextEditor/TextEditor';
 
 class App extends React.Component {
     constructor() {
@@ -37,8 +39,23 @@ class App extends React.Component {
                 <div style={{ 'height': '30px' }} />
                 <UserIDinput
                     callback={id => console.log(id)}
-                    // pattern={/^\d+$/}
-                    // tipStr = "只能包含数字"
+                // pattern={/^\d+$/}
+                // tipStr = "只能包含数字"
+                />
+                <div style={{ 'height': '30px' }} />
+                <CustomInput
+                    options={{
+                        'inputType': 'IPv4地址',
+                        'pattern': /^(((\d{1,2})|(1\d{2})|(2[0-4]\d)|(25[0-5]))\.){3}((\d{1,2})|(1\d{2})|(2[0-4]\d)|(25[0-5]))$/,
+                        'tipStr': '请输入正确的IP',
+                        'callback': field => console.log(field)
+                    }}
+                />
+
+                <div style={{ 'height': '30px' }} />
+                <TextEditor
+                    defaultValue="## MarkDown"
+                    callback={text => console.log(text)}
                 />
             </div>
         );

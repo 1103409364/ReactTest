@@ -1,0 +1,60 @@
+import React from 'react';
+import marked from 'marked';
+import highlight from 'highlight.js';
+import 'highlight.js/styles/vs.css';
+// import 'highlight.js/styles/atom-one-dark.css'; 
+
+import './TextEditor.scss';
+
+// 代码高亮需要引入css 和 js
+marked.setOptions({
+    highlight(code) {
+        return highlight.highlightAuto(code).value
+    }
+})
+
+// 支持 MarkDown 的即时预览在线编辑器
+class TextEditor extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            'html': '支持 MarkDown 的即时预览在线编辑器'
+        }
+
+        this.handleInput = this.handleInput.bind(this);
+    }
+
+    handleInput(e) {
+        this.setState({
+            'html': marked(e.target.innerText, { breaks: true }),
+        });
+
+        // 使用文本框能够“自适应”高度,改用 div 做
+        // this.textarea.style.height = 'auto'
+        // this.textarea.style.height = this.textarea.scrollHeight + 'px'
+    }
+
+    render() {
+        return (
+            <div className="TextEditor">
+                <div
+                    // 只能输入纯文本
+                    contentEditable="plaintext-only"
+                    className="textarea"
+                    onInput={this.handleInput}
+                // 得到当前dom节点
+                // ref={textarea => { this.textarea = textarea }}
+                />
+
+                <div className="preview"
+                    dangerouslySetInnerHTML={{ __html: this.state.html }}
+                >
+                </div>
+
+            </div>
+        )
+    }
+}
+
+export default TextEditor;

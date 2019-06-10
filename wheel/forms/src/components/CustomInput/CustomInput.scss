@@ -1,6 +1,6 @@
 $inputColor: #1a73e8;
 
-.UserIDinput {
+.CustomInput {
     display: flex;
     text-align: center;
     // background-color: #9b9b9b;
@@ -25,21 +25,19 @@ $inputColor: #1a73e8;
         padding: 12px;
     }
 
-    .UserIDinput-tip {
+    .CustomInput-tip {
         transition: all 0.2s ease-in;
-        font: 400 14px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
-        // width: 400px;
+        font: 400 16px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
         position: absolute;
+        right: 13px;
         color: red;
-        top: 130%;
+        top: 50%;
         margin-top: -11px;
         background-color: #fff;
     }
 
-    // 邮箱合法改变提示样式
-    .UserIDinput-tip.legal{
-        top: 50%;
-        right: 13px;
+    // 字段合法改变提示样式
+    .CustomInput-tip.legal{
         width: 20px;
         height: 20px;
         font-weight: bold;

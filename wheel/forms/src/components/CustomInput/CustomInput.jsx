@@ -1,18 +1,32 @@
 import React from 'react';
-import './UserIDinput.scss';
+import './CustomInput.scss';
 
-// 检查用户名是否符合给定的规则
-// 默认规则 4到16位（字母，数字，下划线，减号）,可以自定义规则：
-// 接收两个参数 1 正则表达式 2 规则描述字符串
-class UserIDinput extends React.Component {
+// 可配置的输入框，可接一个配置对象options：
+// 
+// {
+//     inputType: 输入框名称，比如 '手机号'、'邮箱'、'身份证号' 等等,
+//     pattern: 匹配规则,
+//     tipStr: 错误提示文本,
+//     callback: 回调函数
+// }
+
+class CustomInput extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             'tip': '',
             'showTip': false,
             'focus': false,
             'inputTxt': '',
-            'UserID': ''
+            'field': '',
+            // 如果没有传入配置，使用默认配置
+            'options': this.props.options ? this.props.options : {
+                'inputType': '正整数',
+                'pattern': /^\d+$/,
+                'tipStr': '请输入正整数',
+                'callback': field => console.log(field)
+            }
         }
 
         this.handleBlur = this.handleBlur.bind(this);
@@ -26,34 +40,32 @@ class UserIDinput extends React.Component {
             'inputTxt': ipt
         })
     }
-    // 输入框失去焦点的时候，验证ID有效性,非法则清空 UserID 字段
+    // 输入框失去焦点的时候，验证字段有效性,邮箱非法则清空 field 字段
     handleBlur(e) {
         this.setState({
             'focus': false
         })
 
-        let UserID = e.target.value;
+        let field = e.target.value;
 
-        if (!UserID) return;
-        
-        let pattern = this.props.pattern ? this.props.pattern : /^[a-zA-Z0-9_-]{4,16}$/;
-        let tipStr = this.props.tipStr ? this.props.tipStr : '只能包含（字母，数字，下划线，减号）长度4到16位';
-        // console.log(pattern);
-        
-        if (!pattern.test(UserID)) {
+        if (!field) return;
+
+        if (!this.state.options.pattern.test(field)) {
             this.setState({
-                'tip': tipStr,
+                'tip': this.state.options.tipStr,
                 'showTip': true,
-                'UserID': ''
+                'field': ''
             })
+
+            this.state.options.callback('error');
         } else {
             this.setState({
-                'UserID': UserID,
+                'field': field,
                 'showTip': true,
                 'tip': '√',
             });
 
-            this.props.callback(UserID);
+            this.state.options.callback(field);
         }
     }
 
@@ -66,25 +78,25 @@ class UserIDinput extends React.Component {
 
     render() {
         return (
-            <div className="UserIDinput">
+            <div className="CustomInput">
                 <label
-                    htmlFor="UserIDinput"
+                    htmlFor="CustomInput"
                     className={this.state.focus === true || !!this.state.inputTxt ? 'focus' : ''}
                     style={{'color': this.state.focus ? '': '#868686'}}
                 >
-                    用户名
+                    {this.state.options.inputType}
                 </label>
 
                 <input
                     type="text"
-                    id="UserIDinput"
+                    id="CustomInput"
                     onBlur={this.handleBlur}
                     onFocus={this.handleFocus}
                     onChange={this.handleChange}
                     className={this.state.focus === true ? 'focus' : ''}
                 ></input>
                 <div
-                    className={this.state.UserID !== '' ? 'UserIDinput-tip legal' : 'UserIDinput-tip illegal'}
+                    className={this.state.field !== '' ? 'CustomInput-tip legal' : 'CustomInput-tip illegal'}
                     style={{ 'opacity': this.state.showTip === true ? '1' : '0' }}
                 >
                     {this.state.tip}
@@ -98,4 +110,4 @@ class UserIDinput extends React.Component {
 
 }
 
-export default UserIDinput;
+export default CustomInput;
