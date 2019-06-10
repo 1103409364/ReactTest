@@ -1,5 +1,9 @@
-## pagination
+### pagination
 分页导航组件，接受一个回调函数，得到当前页码
 
-## calendar
+### calendar
 日历组件，接受一个回调函数，得到当前日期
+
+### forms
+* 表单验证组件，包含错误提示，可配置<br>
+* 支持 MarkDown 预览的文本编辑组件
