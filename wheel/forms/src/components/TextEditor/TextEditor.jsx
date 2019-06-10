@@ -13,13 +13,13 @@ marked.setOptions({
     }
 })
 
-// 支持 MarkDown 的即时预览在线编辑器
+// 支持 MarkDown 的即时预的编辑器
 class TextEditor extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            'html': '支持 MarkDown 和代码高亮的即时预览在线编辑器'
+            'html': '支持 MarkDown 的即时预的编辑器'
         }
 
         this.handleInput = this.handleInput.bind(this);
