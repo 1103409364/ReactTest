@@ -19,7 +19,7 @@ class TextEditor extends React.Component {
         super(props);
 
         this.state = {
-            'html': '支持 MarkDown 的即时预的编辑器'
+            'html': '支持 MarkDown 和代码高亮的文本框'
         }
 
         this.handleInput = this.handleInput.bind(this);
