@@ -19,7 +19,7 @@ class TextEditor extends React.Component {
         super(props);
 
         this.state = {
-            'html': '支持 MarkDown 的即时预览在线编辑器'
+            'html': '支持 MarkDown 和代码高亮的即时预览在线编辑器'
         }
 
         this.handleInput = this.handleInput.bind(this);
@@ -30,9 +30,7 @@ class TextEditor extends React.Component {
             'html': marked(e.target.innerText, { breaks: true }),
         });
 
-        // 使用文本框能够“自适应”高度,改用 div 做
-        // this.textarea.style.height = 'auto'
-        // this.textarea.style.height = this.textarea.scrollHeight + 'px'
+        this.props.callback(this.state.html);
     }
 
     render() {
@@ -43,8 +41,6 @@ class TextEditor extends React.Component {
                     contentEditable="plaintext-only"
                     className="textarea"
                     onInput={this.handleInput}
-                // 得到当前dom节点
-                // ref={textarea => { this.textarea = textarea }}
                 />
 
                 <div className="preview"
