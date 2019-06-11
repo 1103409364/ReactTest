@@ -1,0 +1,38 @@
+.App {
+    h3 {
+        color: #fff;
+        font-size: 30px;
+        padding: 10px 0;
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+    }
+
+    .Cal {
+        $maxWidth: 336px;
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        // float: left;
+        align-content: flex-start;
+
+        .Calendar {
+            flex: 0 1 $maxWidth;
+        }
+
+        .CustomInput {
+            flex: 0 1 $maxWidth;
+            margin-left: 20px;
+        }
+    }
+
+    @media screen and (max-width:336 * 2 + 22px) {
+        .Cal {
+            .CustomInput {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+    }
+}

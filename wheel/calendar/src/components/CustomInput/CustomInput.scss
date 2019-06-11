@@ -1,0 +1,68 @@
+$inputColor: #1a73e8;
+$maxWidth: 336px;
+$maxHeight: 48px;
+$radius: 5px;
+
+.CustomInput {
+    display: flex;
+    text-align: center;
+    // background-color: #9b9b9b;
+    max-width: $maxWidth;
+    max-height: $maxHeight;
+
+    border: 1px solid #c7c7c7;
+    border-radius: $radius;
+    box-sizing: border-box;
+    position: relative;
+
+    input {
+        width: 100%;
+        line-height: 26px;
+        padding: 13px;
+        border: none;
+        border-radius: $radius;
+        outline: none;
+        color: #202124;
+        font: 400 17px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    }
+
+    label {
+        position: absolute;
+        left: 20px;
+        transition: all 0.2s ease;
+        padding: 0 3px;
+        top: 50%;
+        margin-top: -11px;
+        background-color: #fff;
+        color: #868686;
+        cursor: text;
+    }
+
+    .Calendar {
+        display: none;
+    }
+}
+
+.CustomInput.focus {
+    border: 2px solid $inputColor;
+    border-radius: $radius;
+    // box-sizing: border-box;
+    // 边框加1，padding减1 抵消
+    border: 2px solid $inputColor;
+    .Calendar {
+        position: absolute;
+        top: 115%;
+        left: 3px;
+        display: block;
+    }
+
+    input {
+        padding: 12px;
+    }
+
+    label {
+        top: 0;
+        font-size: 14px;
+        color: $inputColor;
+    }
+}

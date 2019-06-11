@@ -1,5 +1,6 @@
 import React from 'react';
 import './Calendar.scss';
+import './iconfont/iconfont.css'
 
 class Calendar extends React.Component {
     constructor(props) {
@@ -17,6 +18,13 @@ class Calendar extends React.Component {
             'selecDate': this.dateNow.getDate(),
             'selecDay': this.dateNow.getDay(),
         }
+
+        this.props.callback({
+            'year': this.dateNow.getFullYear(),
+            'month': this.dateNow.getMonth() + 1,
+            'date': this.dateNow.getDate(),
+            'day': this.dateNow.getDay(),
+        });
     }
     // 计算某月的天数,计算方法：下月的上一天,也就是本月的最后一天，就是天数
     getMonDays(Y, M) {
@@ -30,8 +38,8 @@ class Calendar extends React.Component {
         let d = new Date(Y, M, 1);
         return d.getDay();
     }
-    // 设置新的日期
-    setDate(Y, M, D) {
+    // 设置新的日期,show 参数为 Boolean 值，表示日历是否该显示。点击切换按钮应该保持日历显示状态
+    setDate(Y, M, D, show) {
         D = D !== undefined ? D : this.state.selecDate;
 
         let d = new Date(Y, M, D);
@@ -47,24 +55,26 @@ class Calendar extends React.Component {
             'month': d.getMonth() + 1,
             'date': d.getDate(),
             'day': d.getDay(),
+            'show': show
         }
         // 回调函数，参数为选中的年月日周组成的对象
         this.props.callback(selec);
     }
 
+    // 最后一个参数 true 表示日历保持显示状态
     nextMonth() {
-        this.setDate(this.state.selecYear, this.state.selecMonth + 1);
+        this.setDate(this.state.selecYear, this.state.selecMonth + 1, undefined, true);
     }
 
     nextYear() {
-        this.setDate(this.state.selecYear + 1, this.state.selecMonth);
+        this.setDate(this.state.selecYear + 1, this.state.selecMonth, undefined, true);
     }
 
     prevMonth() {
-        this.setDate(this.state.selecYear, this.state.selecMonth - 1);
+        this.setDate(this.state.selecYear, this.state.selecMonth - 1, undefined, true);
     }
     prevYear() {
-        this.setDate(this.state.selecYear - 1, this.state.selecMonth);
+        this.setDate(this.state.selecYear - 1, this.state.selecMonth, undefined, true);
     }
     // 判断当前日历页，是不是当前月
     isThisMon() {
@@ -129,16 +139,15 @@ class Calendar extends React.Component {
             <table className="Calendar">
                 <thead className="Calendar-head">
                     <tr>
-
-                        <th className="prevY" onClick={() => this.prevYear()}>&lt;&lt;</th>
-                        <th className="prevM" onClick={() => this.prevMonth()}>&lt; </th>
-                        <th colSpan="3" className="">
+                        <th className="prevY" onClick={() => this.prevYear()}><i class="iconfont">&#xe743;</i></th>
+                        <th className="prevM" onClick={() => this.prevMonth()}><i class="iconfont">&#xe742;</i></th>
+                        <th colSpan="3" className="cur">
                             {
                                 `${this.state.selecYear} 年 ${this.state.selecMonth + 1} 月`
                             }
                         </th>
-                        <th className="nextM" onClick={() => this.nextMonth()}>&gt; </th>
-                        <th className="nextY" onClick={() => this.nextYear()}>&gt;&gt;</th>
+                        <th className="nextM" onClick={() => this.nextMonth()}><i class="iconfont">&#xe74c;</i></th>
+                        <th className="nextY" onClick={() => this.nextYear()}><i class="iconfont">&#xe74d;</i></th>
                     </tr>
                     <tr>
                         {
@@ -161,7 +170,7 @@ class Calendar extends React.Component {
                     <tr>
                         <td
                             colSpan="7"
-                            onClick={() => this.setDate(this.state.tdYear, this.state.tdMonth, this.state.tdDate)}
+                            onClick={() => this.setDate(this.state.tdYear, this.state.tdMonth, this.state.tdDate, true)}
                         >{`今天 ${this.state.tdYear}-${this.state.tdMonth + 1}-${this.state.tdDate} 周${DAYARR[this.state.tdDay]}`}</td>
                     </tr>
                 </tfoot>
