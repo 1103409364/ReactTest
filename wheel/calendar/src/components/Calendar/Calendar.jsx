@@ -139,15 +139,15 @@ class Calendar extends React.Component {
             <table className="Calendar">
                 <thead className="Calendar-head">
                     <tr>
-                        <th className="prevY" onClick={() => this.prevYear()}><i class="iconfont">&#xe743;</i></th>
-                        <th className="prevM" onClick={() => this.prevMonth()}><i class="iconfont">&#xe742;</i></th>
+                        <th className="prevY" onClick={() => this.prevYear()}><i className="iconfont">&#xe743;</i></th>
+                        <th className="prevM" onClick={() => this.prevMonth()}><i className="iconfont">&#xe742;</i></th>
                         <th colSpan="3" className="cur">
                             {
                                 `${this.state.selecYear} 年 ${this.state.selecMonth + 1} 月`
                             }
                         </th>
-                        <th className="nextM" onClick={() => this.nextMonth()}><i class="iconfont">&#xe74c;</i></th>
-                        <th className="nextY" onClick={() => this.nextYear()}><i class="iconfont">&#xe74d;</i></th>
+                        <th className="nextM" onClick={() => this.nextMonth()}><i className="iconfont">&#xe74c;</i></th>
+                        <th className="nextY" onClick={() => this.nextYear()}><i className="iconfont">&#xe74d;</i></th>
                     </tr>
                     <tr>
                         {
