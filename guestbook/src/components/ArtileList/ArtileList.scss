@@ -1,0 +1,78 @@
+$listH: 400px;
+
+.Artile {
+    .list-name {
+        line-height: 50px;
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+        font-size: 22px;
+
+        i {
+            font-size: 22px;
+            line-height: 50px;
+        }
+    }
+
+    .Artile-list {
+        .content {
+            font-size: 14px;
+            word-wrap: break-word;
+            background-color: #FAF9DE;
+            padding: 30px 20px;
+            max-height: $listH;
+            overflow: hidden;
+            margin-bottom: 20px;
+            position: relative;
+            transition: all 0.5s ease;
+            pre {
+                background-color: #E9EBFE;
+                padding: 13px;
+                overflow-x: auto;
+            }
+
+            &.show {
+                overflow: auto;
+                max-height: 1000px;
+            }
+
+            .info {
+                width: 96%;
+            border-bottom: 1px solid #777777;
+
+                position: absolute;
+
+                font-size: 14px;
+                text-align: left;
+                margin-top: 20px;
+                color: #777777;
+                top: -10px;
+                left: 10px;
+            }
+            position: relative;
+            // 阴影效果
+            box-shadow: 0 5px 5px #0000004d;
+            .delete-btn {
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                cursor: pointer;
+            }
+
+            .spread-btn {
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+    // * 河白色 #FFFFFF rgb(255, 255, 255)  
+    // * 杏仁黄 #FAF9DE rgb(250, 249, 222)
+    // * 秋叶褐 #FFF2E2 rgb(255, 242, 226)
+    // * 胭脂红 #FDE6E0 rgb(253, 230, 224)
+    // * 青草绿 #E3EDCD rgb(227, 237, 205)
+    // * 海天蓝 #DCE2F1 rgb(220, 226, 241)
+    // * 葛巾紫 #E9EBFE rgb(233, 235, 254)
+    // * 极光灰 #EAEAEF rgb(234, 234, 239)
