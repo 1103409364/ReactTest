@@ -34,7 +34,7 @@ class TextEditor extends React.Component {
     }
 
     handleInput(e) {
-        console.log(e.target.innerText);
+        // console.log(e.target.innerText);
 
         let isEmpty = this.checkIsEmpty(e.target.innerText);
         this.setState({
@@ -47,6 +47,20 @@ class TextEditor extends React.Component {
     }
 
     save() {
+        if (this.props.email === '@匿名用户') {
+            if (!window.confirm("Email 有误或者未填写，要以匿名的方式发布吗？")) {
+                return;
+            };
+        }
+        // 检查输入是否为空
+        if (this.checkIsEmpty(this.state.html)) {
+            this.setState({
+                'isEmpty': true,
+            })
+            this.ipt.focus();
+            return;
+        }
+
         axios.get("do/write.php", {
             params: {
                 "email": this.props.email,
@@ -57,11 +71,11 @@ class TextEditor extends React.Component {
             this.props.fetchData(this.clear);
         })
     }
-
+    // 清空输入框
     clear() {
         this.setState({
             'html': '',
-            'isEmpty': true,
+            // 'isEmpty': true,
         })
         this.ipt.innerText = '';
         this.ipt.focus();
@@ -148,6 +162,10 @@ let str = "hello world !"
                             className="clear"
                             value="清屏"
                         />
+                        <span
+                            className={this.state.isEmpty ? 'TextEditor-tip empty' : 'TextEditor-tip'}
+                        >内容为空，请输入
+                        </span>
                     </div>
                 </div>
             </div>

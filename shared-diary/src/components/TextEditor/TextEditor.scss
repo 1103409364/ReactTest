@@ -9,11 +9,8 @@ $maxWidth: 692px;
     .wrap {
         flex: 1;
         position: relative;
-
-        // display: flex;
         flex-direction: column;
 
-        // justify-content: center;
         .textarea {
             font: 400 14px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
             line-height: 19.3px;
@@ -29,20 +26,20 @@ $maxWidth: 692px;
             box-sizing: border-box;
 
             // 阴影
-            // position: relative;
-            box-shadow: 0 5px 3px rgba(0, 0, 0, .3);
-            // &::after{
-            //     position: absolute;
-            //     bottom: -29px;
-            //     left: 0;
-            //     overflow: hidden;
-            //     background: #fff;
-            //     width: 100%;
-            //     height: 15px;
-            //     content: '';
-            //     border-radius: 50%;
-            //     box-shadow: 0 -10px 5px #fff;
-            // }
+            position: relative;
+            box-shadow: 0 10px 5px rgba(0, 0, 0, .3);
+            &::after{
+                position: absolute;
+                bottom: -29px;
+                left: 0;
+                overflow: hidden;
+                background: #fff;
+                width: 100%;
+                height: 15px;
+                content: '';
+                border-radius: 50%;
+                box-shadow: 0 -10px 5px #fff;
+            }
 
             // 更改光标颜色
             caret-color: red;
@@ -92,6 +89,24 @@ $maxWidth: 692px;
                 &:active {
                     background-color: #555555;
                 }
+            }
+
+            .TextEditor-tip {
+                height: 0;
+                overflow: hidden;
+                color: red;
+                width: 150px;
+                text-align: center;
+                position: absolute;
+                top: 0;
+                left: -150px;
+                transition: all 0.3s ease;
+            }
+
+            .TextEditor-tip.empty{
+                height: 32px;
+                line-height: 32px;
+                display: block;
             }
 
             i {
