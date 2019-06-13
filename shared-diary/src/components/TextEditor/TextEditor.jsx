@@ -67,7 +67,13 @@ class TextEditor extends React.Component {
                 "date": this.props.date,
                 "message": this.state.html
             }
-        }).then(() => {
+        }).then((res) => {
+            // console.log(res);
+            if (!res.statusText === 'OK') {
+                alert('服务器错误，请稍后重试');
+                return;
+            }
+
             this.props.fetchData(this.clear);
         })
     }

@@ -45,6 +45,11 @@ class App extends React.Component {
                 "sort": 0 //0 倒序，1 正序
             }
         }).then((data) => {
+            // console.log(data)
+            if (!data.statusText === 'OK') {
+                alert('服务器错误');
+                return;
+            }
             let d = data.data.result;
             // 返回的数据是数组，数组成员是字符串
             let content = d.map((item) => {
@@ -60,7 +65,7 @@ class App extends React.Component {
                 'content': content
             })
         }).then(() => {
-            if(typeof callback === 'function') {
+            if (typeof callback === 'function') {
                 // 保存成功清空输入框
                 callback();
             } else {
