@@ -16,13 +16,10 @@ $maxWidth: 692px;
             line-height: 19.3px;
             width: 100%;
             // max-width: $maxWidth;
-            padding: 13px;
+            padding: 30px 20px 20px 20px;
             border-top: 1px solid #c7c7c7;
-            // border-radius: 5px;
             outline: none;
             color: #202124;
-            transition: all 0.3s ease;
-            // overflow: hidden;
             box-sizing: border-box;
 
             // 阴影
@@ -49,7 +46,7 @@ $maxWidth: 692px;
         .textarea:focus {
             // 边框加1 padding减1 抵消
             border-top: 2px solid $inputColor;
-            padding-top: 12px;
+            padding-top: 29px;
         }
 
         .App-btn {
@@ -94,7 +91,7 @@ $maxWidth: 692px;
             .TextEditor-tip {
                 height: 0;
                 overflow: hidden;
-                color: red;
+                color: #ff0000;
                 width: 150px;
                 text-align: center;
                 position: absolute;
@@ -103,10 +100,11 @@ $maxWidth: 692px;
                 transition: all 0.3s ease;
             }
 
-            .TextEditor-tip.empty{
+            .TextEditor-tip.show{
                 height: 32px;
                 line-height: 32px;
                 display: block;
+                transition: all 0.3s ease;
             }
 
             i {
@@ -126,7 +124,7 @@ $maxWidth: 692px;
             // display: none;
             font-size: 14px;
             // max-width: $maxWidth;
-            padding: 12px;
+            padding: 20px;
             // position: absolute;
             // top: 100%;
             transition: all 0.3s ease;
@@ -137,18 +135,6 @@ $maxWidth: 692px;
 
             position: relative;
             box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
-            // &::after{
-            //     position: absolute;
-            //     bottom: -29px;
-            //     left: 0;
-            //     overflow: hidden;
-            //     background: #fff;
-            //     width: 100%;
-            //     height: 15px;
-            //     content: '';
-            //     border-radius: 50%;
-            //     box-shadow: 0 -10px 5px #fff;
-            // }
 
             pre {
                 background-color: #fdf6e3;
@@ -156,16 +142,5 @@ $maxWidth: 692px;
                 overflow-x: auto;
             }
         }
-    }
-
-    .wrap.focus {
-        // .preview {
-        //     display: block;
-        // }
-        // .submit {
-        //     right: 1px;
-        //     bottom: 1px;
-        // }
-
     }
 }

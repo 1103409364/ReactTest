@@ -84,7 +84,14 @@ class EmailInputBox extends React.Component {
                 >
                     {this.state.tip}
                 </div>
-                <i className="iconfont">&#xe623;</i>
+                <i 
+                className="iconfont emailicon"
+                onClick={()=>{
+                    this.setState({
+                        'focus': true
+                    })
+                }}
+                >&#xe623;</i>
             </div>
         )
     }

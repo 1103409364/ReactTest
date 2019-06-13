@@ -66,7 +66,7 @@ $inputColor: #1a73e8;
         color: $inputColor;
     }
 
-    i {
+    .emailicon {
         position: absolute;
         right: 10px;
         top: 0;
@@ -74,6 +74,7 @@ $inputColor: #1a73e8;
         line-height: 48px;
 
         color: #868686;
+        cursor: pointer;
     }
 
 }

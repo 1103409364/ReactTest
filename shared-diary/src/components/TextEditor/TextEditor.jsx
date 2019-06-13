@@ -22,28 +22,26 @@ class TextEditor extends React.Component {
         this.state = {
             'html': '',
             'focus': false,
-            'isEmpty': false,
+            'isEmpty': false, //输入框是否为空
+            'showTip': false, //是否显示提示文字
         }
 
         this.handleInput = this.handleInput.bind(this);
         this.clear = this.clear.bind(this);
         this.save = this.save.bind(this);
     }
+    // 检查输入是否为空
     checkIsEmpty(text) {
         return text.trim() === '';
     }
-
+    // 输入事件处理
     handleInput(e) {
-        // console.log(e.target.innerText);
-
         let isEmpty = this.checkIsEmpty(e.target.innerText);
         this.setState({
             'html': marked(e.target.innerText, { breaks: true }),
             'isEmpty': isEmpty,
+            'showTip': false,
         });
-
-
-        // this.props.callback(this.state.html);
     }
 
     save() {
@@ -56,6 +54,7 @@ class TextEditor extends React.Component {
         if (this.checkIsEmpty(this.state.html)) {
             this.setState({
                 'isEmpty': true,
+                'showTip': true,
             })
             this.ipt.focus();
             return;
@@ -75,7 +74,7 @@ class TextEditor extends React.Component {
     clear() {
         this.setState({
             'html': '',
-            // 'isEmpty': true,
+            'isEmpty': true,
         })
         this.ipt.innerText = '';
         this.ipt.focus();
@@ -163,7 +162,7 @@ let str = "hello world !"
                             value="清屏"
                         />
                         <span
-                            className={this.state.isEmpty ? 'TextEditor-tip empty' : 'TextEditor-tip'}
+                            className={this.state.showTip ? 'TextEditor-tip show' : 'TextEditor-tip'}
                         >内容为空，请输入
                         </span>
                     </div>

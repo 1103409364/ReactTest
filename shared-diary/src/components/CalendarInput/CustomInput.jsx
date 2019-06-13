@@ -79,7 +79,15 @@ class CustomInput extends React.Component {
                 <div className="CustomInput-cal">   
                     <Calendar callback={this.changeDate} />
                 </div>
-                <i className="iconfont iptico">&#xe66c;</i>
+                <i 
+                className="iconfont iptico"
+                onClick={()=>{
+                    this.setState({
+                        'showClendar': true,
+                        'focus': true
+                    })
+                }}
+                >&#xe66c;</i>
             </div>
         )
     }
