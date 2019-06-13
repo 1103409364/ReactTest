@@ -57,7 +57,7 @@ class TextEditor extends React.Component {
                 'showTip': true,
             })
             
-            this.ipt.focus();
+            // this.ipt.focus();
             return;
         }
 
@@ -84,27 +84,22 @@ class TextEditor extends React.Component {
             'isEmpty': true,
         })
         this.ipt.innerText = '';
-        this.ipt.focus();
+        // this.ipt.focus();
     }
 
     componentDidMount() {
         let txt =
-            `# MarkDown
+            `# MarkDown 语法提示
 ## 二级标题
 ### 三级标题
 **加粗的文字**
-
 *这是倾斜的文字*
-
 ~~加删除线的文字~~
-
-* 这是列表 
+* 这是列表
 
 [这是超链接](http://test.com)
-
 \`\`\`
 let str = "hello world !"
-
 \`\`\` `
 
         this.ipt.innerText = txt;

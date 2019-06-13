@@ -89,7 +89,7 @@ class App extends React.Component {
                     />
                     <CalendarInput callback={this.saveDate} />
                 </div>
-                {/* <a name="btn"></a> */}
+                <a name="btn"></a>
 
                 <TextEditor
                     fetchData={this.fetchData}
