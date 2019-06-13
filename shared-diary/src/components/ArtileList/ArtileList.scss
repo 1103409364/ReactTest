@@ -61,10 +61,15 @@ $listH: 200px;
                 top: 10px;
                 cursor: pointer;
                 user-select: none;
+                color: #777777;
+                &:hover {
+                    color: red;
+                }
             }
 
             .spread-btn {
                 display: none;
+     
             }
 
             &.overflow {
@@ -83,12 +88,15 @@ $listH: 200px;
                     bottom: 0;
                     padding: 0 10px;
                     cursor: pointer;
+                    &:hover {
+                        color: #1749f0;
+                    }
                 }
             }
 
             &.hide {
                 display: none;
-                
+
             }
         }
     }

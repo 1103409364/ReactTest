@@ -32,17 +32,21 @@ function Item(props) {
                 "id": parseInt(props.item.id)
             }
         }).then(res => {
-            // 检查 response 如果返回成功，立即隐藏自己
-            if (res.data === 'ok') {
+            // 立即隐藏自己，删除失败再重新显示
+            if (window.confirm('确定要删除吗？')) {
                 deleteSelf();
-            } else {
+            }
+            
+            if (!res.data === 'ok') {
+                // 删除失败，重新显示
+                changeHide(false);
                 alert('服务器错误');
             }
         })
     }
 
     const deleteSelf = () => {
-        console.log('删除自己');
+        // console.log('删除自己');
         changeHide(true);
     }
 
@@ -60,11 +64,7 @@ function Item(props) {
     })
 
     return (
-        <div
-            className={itemDivClass}
-            // style = {{display: isHide ? 'none':'block'}}
-            ref={itemDiv}
-        >
+        <div className={itemDivClass} ref={itemDiv}>
             <div
                 dangerouslySetInnerHTML={{
                     __html: (`${props.item.html}

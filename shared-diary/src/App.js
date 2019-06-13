@@ -13,18 +13,8 @@ class App extends React.Component {
         super();
         this.state = {
             'email': '@匿名用户', //默认是匿名用户
-
-            'content': [{
-                'email': '@匿名用户',
-                'date': '2019',
-                'html': '<li>MarkDown 预览</li>',
-            }, {
-                'email': '120',
-                'date': '2011',
-                'html': '<h1>test</h1>',
-            }]
+            'content': []
         }
-
         this.saveEmail = this.saveEmail.bind(this);
         this.saveDate = this.saveDate.bind(this);
         this.saveArticle = this.saveArticle.bind(this);
@@ -49,10 +39,6 @@ class App extends React.Component {
         })
     }
 
-    update() {
-        // 拉取数据，更新state
-    }
-
     fetchData(callback) {
         axios.get("do/read.php", {
             params: {
@@ -70,9 +56,6 @@ class App extends React.Component {
                     'id': item.id
                 }
             })
-
-            // console.log(content);
-
             this.setState({
                 'content': content
             })
