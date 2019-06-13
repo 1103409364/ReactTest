@@ -63,8 +63,13 @@ $listH: 200px;
                 user-select: none;
             }
 
+            .spread-btn {
+                display: none;
+            }
+
             &.overflow {
                 .spread-btn {
+                    display: block;
                     font-size: 14px;
                     line-height: 25px;
                     font-weight: bold;
@@ -79,6 +84,11 @@ $listH: 200px;
                     padding: 0 10px;
                     cursor: pointer;
                 }
+            }
+
+            &.hide {
+                display: none;
+                
             }
         }
     }
