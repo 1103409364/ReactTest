@@ -109,8 +109,6 @@ class App extends React.Component {
                     date={this.state.date}
                     email={this.state.email}
                 />
-                {/* <button>发布</button> */}
-                {/* state 被更新，刷新列表 */}
                 <ArtileList content={this.state.content} />
                 <a href="#btn" className="back" >BACK</a>
             </div>
