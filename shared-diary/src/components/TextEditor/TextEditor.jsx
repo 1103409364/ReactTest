@@ -64,7 +64,7 @@ class TextEditor extends React.Component {
         axios.get("do/write.php", {
             params: {
                 "email": this.props.email,
-                "date": this.props.date,
+                "date": `${this.props.date.year} 年 ${this.props.date.month} 月 ${this.props.date.date} 日 ${this.props.date.day}`,
                 "message": this.state.html
             }
         }).then((res) => {

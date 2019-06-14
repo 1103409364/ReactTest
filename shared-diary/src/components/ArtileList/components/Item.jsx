@@ -69,8 +69,8 @@ function Item(props) {
                 dangerouslySetInnerHTML={{
                     __html: (`${props.item.html}
                         <div class="info">
-                            <span class="email">Email:${props.item.email}</span>, 
-                            <span class="date">Date:${props.item.date}</span>
+                            <span class="email">Email：${props.item.email}</span>，
+                            <span class="date">日期：${props.item.date}</span>
                         </div>`
                     )
                 }}

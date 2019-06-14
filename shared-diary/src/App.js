@@ -89,7 +89,7 @@ class App extends React.Component {
                     />
                     <CalendarInput callback={this.saveDate} />
                 </div>
-                <a name="btn"></a>
+                {/* <a name="btn"></a> */}
 
                 <TextEditor
                     fetchData={this.fetchData}
@@ -98,7 +98,7 @@ class App extends React.Component {
                     email={this.state.email}
                 />
                 <ArtileList content={this.state.content} />
-                <a href="#btn" className="back" >BACK</a>
+                {/* <a href="#btn" className="back" >BACK</a> */}
             </div>
         );
     }

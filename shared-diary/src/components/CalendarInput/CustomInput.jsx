@@ -1,96 +1,73 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CustomInput.scss';
 import Calendar from './Calendar/Calendar';
 
-class CustomInput extends React.Component {
-    constructor(props) {
-        super(props);
+function CustomInput(props) {
+    const DAYARR = ['日', '一', '二', '三', '四', '五', '六'];
+    let dateNow = new Date();
+    // 初始化今天
+    const [year, setYear] = useState(dateNow.getFullYear());
+    const [month, setMonth] = useState(dateNow.getMonth());
+    const [date, setDate] = useState(dateNow.getDate());
+    const [day, setDay] = useState(dateNow.getDay());
 
-        this.state = {
-            'Y': 1,
-            'M': 2,
-            'D': 3,
+    const [showClendar, changeShow] = useState(false);
+    const [focus, changeFocus] = useState(false);
 
-            'showClendar': false
-        }
-
-        this.handleFocus = this.handleFocus.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.changeDate = this.changeDate.bind(this)
+    const handleFocus = () => {
+        changeShow(true);
+        changeFocus(true);
     }
-    handleChange(e) {
-        let ipt = e.target.value;
 
-        this.setState({
-            'inputTxt': ipt
+    const changeDate = (d) => {
+        // console.log(d)
+        setYear(d.year);
+        setMonth(d.month);
+        setDate(d.date);
+        setDay(d.day);
+        changeShow(d.show === true ? true : false);
+
+        // set方法是异步的？通过上面的变量无法立即获得当前date
+        props.callback({
+            'year': d.year,
+            'month': d.month,
+            'date': d.date,
+            'day': '周' + DAYARR[d.day]
         })
-    }
-
-    handleFocus() {
-        this.setState({
-            'showClendar': true,
-            'focus': true
-        })
-    }
-
-    changeDate(d) {
-        this.setState({
-            'Y': d.year,
-            'M': d.month,
-            'D': d.date,
-            'showClendar': d.show === true ? true : false
-        });
-
-        this.props.callback(d.year + '-' + d.month + '-' + d.date)
     }
 
     // 点击空白隐藏日历
-    componentDidMount() {
-        window.onclick = (e) => {
-            let tagName = e.target.tagName.toLowerCase();
+    window.onclick = (e) => {
+        let tagName = e.target.tagName.toLowerCase();
 
-            if (!(tagName === 'td' || tagName === 'th' || tagName === 'i' || e.target.id === 'CustomInput')) {
-                this.setState({
-                    'showClendar': false,
-                })
-            }
+        if (!(tagName === 'td' || tagName === 'th' || tagName === 'i' || e.target.id === 'CustomInput')) {
+            changeShow(false);
         }
     }
 
-    render() {
-        return (
-            <div className={this.state.showClendar === true || !!this.state.inputTxt ? 'focus CustomInput' : 'CustomInput'}>
-                <label
-                    htmlFor="CustomInput"
-                    className={this.state.showClendar === true || !!this.state.inputTxt ? 'focus' : ''}
-                    style={{ 'color': this.state.focus ? '' : '#868686' }}
-                >
-                    {/* 日期 */}
-                </label>
+    return (
+        <div className={showClendar === true ? 'focus CustomInput' : 'CustomInput'}>
+            <label
+                htmlFor="CustomInput"
+                className={showClendar === true ? 'focus' : ''}
+                style={{ 'color': focus ? '' : '#868686' }}
+            >
+                {/* 日期 */}
+            </label>
 
-                <input
-                    type="text"
-                    readOnly="readonly"
-                    id="CustomInput"
-                    onBlur={this.handleBlur}
-                    onFocus={this.handleFocus}
-                    value={`${this.state.Y}-${this.state.M}-${this.state.D}`}
-                ></input>
-                <div className="CustomInput-cal">   
-                    <Calendar callback={this.changeDate} />
-                </div>
-                <i 
-                className="iconfont iptico"
-                onClick={()=>{
-                    this.setState({
-                        'showClendar': true,
-                        'focus': true
-                    })
-                }}
-                >&#xe66c;</i>
+            <input
+                type="text"
+                readOnly="readonly"
+                id="CustomInput"
+                onFocus={handleFocus}
+                value={`${year}-${month}-${date} 周${DAYARR[day]}`}
+            ></input>
+            <div className="CustomInput-cal">
+                <Calendar callback={changeDate} />
             </div>
-        )
-    }
+            {/* {props.render(changeDate)} */}
+        </div>
+    )
 }
 
 export default CustomInput;
