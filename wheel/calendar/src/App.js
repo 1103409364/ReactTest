@@ -10,11 +10,6 @@ function App() {
             <div className="Cal">
                 <Calendar callback={d => console.log(d)} />
                 {/*使用 render prop 进行复用*/}
-                {/* <CustomInput
-                    render={(callback) => {
-                        return <Calendar callback={callback} />
-                    }}
-                    callback={(d) => console.log(d)} /> */}
                 <CustomInput
                     render={(callback) => {
                         return <Calendar callback={callback} />
