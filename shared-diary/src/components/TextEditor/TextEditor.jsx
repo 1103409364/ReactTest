@@ -89,18 +89,18 @@ class TextEditor extends React.Component {
 
     componentDidMount() {
         let txt =
-            `# MarkDown 语法提示
+`### MarkDown 语法提示:
+# 一级标题
 ## 二级标题
 ### 三级标题
 **加粗的文字**
-*这是倾斜的文字*
+*倾斜的文字*
 ~~加删除线的文字~~
-* 这是列表
-
 [这是超链接](http://test.com)
 \`\`\`
 let str = "hello world !"
-\`\`\` `
+\`\`\` 
+* 这是列表`
 
         this.ipt.innerText = txt;
 

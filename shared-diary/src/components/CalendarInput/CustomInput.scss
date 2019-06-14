@@ -2,6 +2,7 @@ $inputColor: #1a73e8;
 $maxWidth: 336px;
 $maxHeight: 48px;
 $radius: 5px;
+$calendarHeight: 344px;
 
 .CustomInput {
     display: flex;
@@ -70,7 +71,7 @@ $radius: 5px;
     border: 2px solid $inputColor;
 
     .CustomInput-cal {
-        height: $maxWidth;
+        height: $calendarHeight;
         position: absolute;
         top: 115%;
         left: 3px;
