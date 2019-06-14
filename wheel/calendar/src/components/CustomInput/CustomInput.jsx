@@ -31,7 +31,7 @@ function CustomInput(props) {
             'year': d.year,
             'month': d.month,
             'date': d.date,
-            'day': d.day
+            'day': '周' + DAYARR[d.day]
         })
     }
 
