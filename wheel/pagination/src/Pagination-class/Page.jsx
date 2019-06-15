@@ -1,5 +1,6 @@
 import React from 'react';
 
+// 分三种情况
 function Page({ totalPages, pageIndex, handlePrev, handleNext, handleClickPage }) {
     if (pageIndex < 6) {
         let liArr = [];
@@ -7,7 +8,6 @@ function Page({ totalPages, pageIndex, handlePrev, handleNext, handleClickPage }
         for (let i = 1; i <= length; i++) {
             liArr.push(i);
         }
-
         return (
             <ol>
                 <li className={pageIndex !== 1 ? "prev" : "hide"} onClick={handlePrev}>{"上一页"}</li>

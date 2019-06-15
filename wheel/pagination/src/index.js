@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Pagination from './Pagination';
+import Pagination from './Pagination-Hook';
+// import Pagination from './Pagination-class/Pagination';
 import * as serviceWorker from './serviceWorker';
 
 // 分页器组件，接受两个参数：总页数和回调函数
 ReactDOM.render(
     <Pagination
-        totalPages={31}
+        totalPages={21}
         callback={pageIndex => console.log(pageIndex)} />,
     document.getElementById('root')
 );

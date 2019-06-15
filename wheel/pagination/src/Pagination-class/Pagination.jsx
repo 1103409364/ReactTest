@@ -1,6 +1,6 @@
 import React from 'react';
-import './Pagination.scss';
-import Page from './components/Page';
+import '../Pagination.scss';
+import Page from './Page';
 
 class Pagination extends React.Component {
     constructor(props) {
