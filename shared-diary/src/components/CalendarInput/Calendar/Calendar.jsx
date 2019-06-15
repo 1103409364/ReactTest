@@ -7,10 +7,10 @@ function Calendar(props) {
     const LEN = 42;
     const DAYARR = ['日', '一', '二', '三', '四', '五', '六'];
     // 初始化今天
-    const [tdYear] = useState(dateNow.getFullYear());
-    const [tdMonth] = useState(dateNow.getMonth());
-    const [tdDate] = useState(dateNow.getDate());
-    const [tdDay] = useState(dateNow.getDay());
+    const tdYear = dateNow.getFullYear();
+    const tdMonth = dateNow.getMonth();
+    const tdDate = dateNow.getDate();
+    const tdDay = dateNow.getDay();
     // 初始化选中日期
     const [selecYear, changeYear] = useState(dateNow.getFullYear());
     const [selecMonth, changeMonth] = useState(dateNow.getMonth());
