@@ -9,7 +9,6 @@ import './CustomInput.scss';
 //     tipStr: 错误提示文本,
 //     callback: 回调函数
 // }
-
 class CustomInput extends React.Component {
     constructor(props) {
         super(props);
@@ -33,6 +32,7 @@ class CustomInput extends React.Component {
         this.handleFocus = this.handleFocus.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
+
     handleChange(e) {
         let ipt = e.target.value;
 
@@ -82,7 +82,7 @@ class CustomInput extends React.Component {
                 <label
                     htmlFor="CustomInput"
                     className={this.state.focus === true || !!this.state.inputTxt ? 'focus' : ''}
-                    style={{'color': this.state.focus ? '': '#868686'}}
+                    style={{ 'color': this.state.focus ? '' : '#868686' }}
                 >
                     {this.state.options.inputType}
                 </label>
