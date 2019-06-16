@@ -62,7 +62,7 @@ function CustomInput(props) {
                 readOnly="readonly"
                 id="CustomInput"
                 onFocus={handleFocus}
-                value={`${year}-${month}-${date} 周${DAYARR[day]}`}
+                value={`${year}-${month + 1}-${date} 周${DAYARR[day]}`}
             ></input>
             <div className="CustomInput-cal">
                 <Calendar callback={changeDate}/>

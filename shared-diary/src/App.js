@@ -8,6 +8,7 @@ import axios from 'axios';
 import './App.scss';
 import './iconfont/iconfont.css';
 
+// 月份储存和显示的时候 + 1
 class App extends React.Component {
     constructor() {
         super();

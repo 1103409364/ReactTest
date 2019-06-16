@@ -45,7 +45,7 @@ function Calendar(props) {
 
         let selec = {
             'year': d.getFullYear(),
-            'month': d.getMonth() + 1,
+            'month': d.getMonth(),
             'date': d.getDate(),
             'day': d.getDay(),
             //是否保持显示状态，比如切换月份的时候应该保持显示，选中日期时隐藏
