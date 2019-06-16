@@ -4,7 +4,7 @@ import highlight from 'highlight.js';
 import axios from 'axios';
 
 import 'highlight.js/styles/vs.css';
-import './iconfont/iconfont.css';
+// import '../iconfont/iconfont.css';
 import './TextEditor.scss';
 
 // 代码高亮需要引入css 和 js

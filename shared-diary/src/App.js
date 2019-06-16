@@ -13,7 +13,13 @@ class App extends React.Component {
         super();
         this.state = {
             'email': '@匿名用户', //默认是匿名用户
-            'content': []
+            'content': [],
+            'date': {
+                'year': '',
+                'month': '',
+                'date': '',
+                'day': ''
+            }
         }
         this.saveEmail = this.saveEmail.bind(this);
         this.saveDate = this.saveDate.bind(this);
@@ -75,6 +81,18 @@ class App extends React.Component {
     }
 
     componentDidMount() {
+        // 初始化date
+        const DAYARR = ['日', '一', '二', '三', '四', '五', '六'];
+        let d = new Date();
+
+        this.setState({
+            date: {
+                'year': d.getFullYear(),
+                'month': d.getMonth(),
+                'date': d.getDate(),
+                'day': '周' + DAYARR[d.getDay()]
+            }
+        })
         // 初始化
         this.fetchData();
     }

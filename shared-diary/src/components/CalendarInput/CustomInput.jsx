@@ -14,6 +14,8 @@ function CustomInput(props) {
     const [showClendar, changeShow] = useState(false);
     const [focus, changeFocus] = useState(false);
 
+    const callback = props.callback;
+
     const handleFocus = () => {
         changeShow(true);
         changeFocus(true);
@@ -28,7 +30,7 @@ function CustomInput(props) {
         changeShow(d.show === true ? true : false);
 
         // set方法是异步的？通过上面的变量无法立即获得当前date
-        props.callback({
+        callback({
             'year': d.year,
             'month': d.month,
             'date': d.date,
@@ -63,8 +65,13 @@ function CustomInput(props) {
                 value={`${year}-${month}-${date} 周${DAYARR[day]}`}
             ></input>
             <div className="CustomInput-cal">
-                <Calendar callback={changeDate} />
+                <Calendar callback={changeDate}/>
             </div>
+            <i
+                onClick={() => {
+                    changeShow(true)
+                }}
+                className="iconfont iptico">&#xe66c;</i>
             {/* {props.render(changeDate)} */}
         </div>
     )
