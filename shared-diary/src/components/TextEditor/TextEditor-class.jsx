@@ -133,9 +133,6 @@ let str = "hello world !"
                                 'focus': false
                             })
                         }}
-                        onPaste={() => {
-                            console.log(1)
-                        }}
                     />
 
                     <div className={this.state.isEmpty ? 'empty' : 'preview'}

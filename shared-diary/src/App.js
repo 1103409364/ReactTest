@@ -1,7 +1,7 @@
 import React from 'react';
 import EmailInput from './components/EmailInput/EmailInput';
 import CalendarInput from './components/CalendarInput/CustomInput';
-import TextEditor from './components/TextEditor/TextEditor';
+import TextEditor from './components/TextEditor/TextEditor-Hook';
 import ArtileList from './components/ArtileList/ArtileList';
 import axios from 'axios';
 
