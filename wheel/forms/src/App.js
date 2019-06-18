@@ -40,10 +40,10 @@ function App() {
             />
 
             <div style={{ 'height': '30px' }} />
-            <TextEditor
+            {/* <TextEditor
                 defaultValue="## MarkDown"
                 callback={text => console.log(text)}
-            />
+            /> */}
         </div>
     );
 }

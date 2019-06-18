@@ -38,7 +38,8 @@ class TextEditor extends React.Component {
             <div className="TextEditor">
                 <div
                     // 只能输入纯文本
-                    contentEditable="plaintext-only"
+                    // contentEditable="plaintext-only"
+                    contentEditable="true"
                     className="textarea"
                     onInput={this.handleInput}
                 />
