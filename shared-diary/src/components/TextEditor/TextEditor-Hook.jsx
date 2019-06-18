@@ -96,8 +96,9 @@ let str = "hello world !"
         <div className={focus === true ? 'TextEditor focus' : 'TextEditor'}>
             <div className={focus === true ? 'wrap focus' : 'wrap'}>
                 <div
-                    // 只能输入纯文本
-                    contentEditable="plaintext-only"
+                    // 只能输入纯文本，火狐不兼容
+                    // contentEditable="plaintext-only"
+                    contentEditable="true"
                     className="textarea"
                     ref={divIpt}
                     onInput={handleInput}
