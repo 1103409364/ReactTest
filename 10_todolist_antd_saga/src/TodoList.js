@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import 'antd/dist/antd.css';
-import { Input, Button, List } from 'antd';
+// import { Input, Button, List } from 'antd';
 import store from './store'; //要从 store 中拿数据，引入 store
-import { createInputChangeAction, createAddItemAction, createDeleteItemAction } from './store/actionCreators';
+import { createInputChangeAction, createAddItemAction, createDeleteItemAction, createInitAction,createGetInitListAction } from './store/actionCreators';
 // import { CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_ITEM } from './store/actionType';
+import TodoListUI from './todoListUI';
+// import axios from 'axios';
 
 class TodoList extends Component {
     constructor(props) {
@@ -18,7 +20,8 @@ class TodoList extends Component {
     }
 
     handleInputChange(e) {
-        
+        console.log(e.target.value);
+
         // const action = {
         //     type: CHANGE_INPUT_VALUE,
         //     inputValue: e.target.value
@@ -54,25 +57,29 @@ class TodoList extends Component {
         store.dispatch(action);
     }
 
+    componentDidMount() {
+        const action = createGetInitListAction();
+        // action 正常情况要发给 store，使用 saga 的时候，除了在 reducer 里接收 action 之外，在sagas.js中也能接收
+        store.dispatch(action);
+        // axios.get('/api/todolist').then(function (res) {
+        //     const action = createInitAction(res.data);
+        //     store.dispatch(action);
+        // })
+        
+        // 使用 thunk
+        // const action = createGetListAction();
+        // store.dispatch(action);
+    }
+
     render() {
         return (
-            <div style={{ marginTop: 10, marginLeft: 10 }} >
-                <Input
-                    onChange={this.handleInputChange}
-                    value={this.state.inputValue}
-                    placeholder="todo input"
-                    style={{ width: '300px ', marginRight: '10px' }} />
-                <Button
-                    onClick={this.handleBtnClick}
-                    type="primary"
-                >提交</Button>
-                <List
-                    style={{ width: 300, marginTop: 10 }}
-                    bordered
-                    dataSource={this.state.list}
-                    renderItem={(item, index) => <List.Item onClick={this.handleItemClick.bind(this, index)}>{item}</List.Item>}
-                />
-            </div>
+            <TodoListUI
+                handleInputChange={this.handleInputChange}
+                inputValue={this.state.inputValue}
+                handleBtnClick={this.handleBtnClick}
+                list={this.state.list}
+                handleItemClick={this.handleItemClick}
+            />
         )
     }
 }
