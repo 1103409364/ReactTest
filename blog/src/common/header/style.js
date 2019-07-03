@@ -24,6 +24,10 @@ export const Nav = styled.div`
 export const ItemWrapper = styled.div`
     max-width: 960px;
     margin: 0 auto;
+    .fontStyle {
+        font-size: 20px;
+        line-height: 56px;
+    }
 `
 export const NavItem = styled.div`
     line-height: 56px;
@@ -39,12 +43,13 @@ export const NavItem = styled.div`
     &.active {
         color: #ea6f5a;
     }
+    cursor: pointer
 `
 export const SearchWrapper = styled.div`
     float: left;
     position: relative;
 
-    .iconfont {
+    .zoom {
         position: absolute;
         right: 4px;
         bottom: 4px;
@@ -110,7 +115,7 @@ export const SearchInfo = styled.div`
     top: 100%;
     width: 250px;
     padding: 20px 20px 10px 20px;
-    box-shadow: 0 0 8px rgba(0,0,0,.2);
+    box-shadow: 0 0 4px rgba(0,0,0,.2);
     &::before {
         content: '';
         width: 0;
@@ -143,6 +148,15 @@ export const SearchInfoSwitch = styled.span`
     font-size: 13px;
     float: right;
     cursor: pointer;
+    user-select: none;
+    .spin {
+        float: left;
+        font-size: 13px;
+        margin-right: 4px;
+        transition: all .3s ease-in;
+        // 围绕中心点旋转
+        transform-origin: center center;
+    }
     &:hover {
         color: #333;
     }
@@ -189,4 +203,5 @@ export const Button = styled.div`
     &.reg {
         color: #ec6149;
     }
+    cursor: pointer;
 `
