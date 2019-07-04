@@ -31,7 +31,7 @@ export const changePage = (page) => ({
 
 export const getList = () => {
     return dispatch => {
-        axios.get('/api/trendingSearch.json').then(res => {
+        axios.get('/api/header.json').then(res => {
             const data = res.data;
             dispatch(changeList(data.data));
         }).catch(()=>{

@@ -1,0 +1,50 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 4790772,
+            "slug": "0f438ff0a55f",
+            "nickname": "茶点故事",
+            "avatar_source": "http://upload.jianshu.io/users/upload_avatars/4790772/388e473c-fe2f-40e0-9301-e357ae8f1b41.jpeg",
+            "total_likes_count": 12585,
+            "total_wordage": 504292,
+            "is_following_user": false
+        },
+        {
+            "id": 7416466,
+            "slug": "e7dd0b3c7b70",
+            "nickname": "老沈1",
+            "avatar_source": "http://upload.jianshu.io/users/upload_avatars/7416466/fc1a1a0d-e3c7-4bca-9720-028c5c9914f3.jpg",
+            "total_likes_count": 658,
+            "total_wordage": 132229,
+            "is_following_user": false
+        },
+        {
+            "id": 3730494,
+            "slug": "ffc565d738a3",
+            "nickname": "格列柯南",
+            "avatar_source": "http://upload.jianshu.io/users/upload_avatars/3730494/4a86a2a7-d5b9-47f1-969a-d8ef4711488b.jpg",
+            "total_likes_count": 43419,
+            "total_wordage": 729088,
+            "is_following_user": false
+        },
+        {
+            "id": 7290998,
+            "slug": "4062aaeba322",
+            "nickname": "念远怀人",
+            "avatar_source": "http://upload.jianshu.io/users/upload_avatars/7290998/f64f5ef0-def0-4b26-beb3-b9d88f060ba0.jpg",
+            "total_likes_count": 13283,
+            "total_wordage": 658524,
+            "is_following_user": false
+        },
+        {
+            "id": 5545154,
+            "slug": "898bb4ca481d",
+            "nickname": "徐林Grace",
+            "avatar_source": "http://upload.jianshu.io/users/upload_avatars/5545154/1a3d5ed6-9ad1-44b3-9457-3e6a29dd1b71.jpg",
+            "total_likes_count": 6243,
+            "total_wordage": 678848,
+            "is_following_user": false
+        }
+    ]
+}

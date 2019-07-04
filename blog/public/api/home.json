@@ -1,0 +1,107 @@
+{
+    "success": true,
+    "data": {
+        "bannerImg": "https://upload.jianshu.io/admin_banners/web_images/4675/569882aa7e239c755c754c4d170a859eca26f752.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540",
+        "topicList": [{
+            "id": 1,
+            "title": "社会热点"
+        },{
+            "id": 2,
+            "title": "手绘"
+        }],"articleList": [{
+            "id": 1,
+            "title": "锁文锁闷了我",
+            "desc": "“你的文章《……》已转为仅自己可见，如有疑问请查看《为什么文章被锁？》”近几天，每当早晨打开简书，这样的提示就跳进我的眼帘，刺入我的心坎，而且越...",
+            "imgUrl": "https://upload-images.jianshu.io/upload_images/15320544-8da8479a29cfa90d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+        },{
+            "id": 2,
+            "title": "“天然黄体酮”被发现，女人没事常吃点，补充雌激素，卵巢更年轻",
+            "desc": "文章源自网络 女性身体中能够保持女性青春靓丽最重要的一点就是体内分泌的雌激素，只有体内雌激素分泌均衡了，让女性的身体更加的健康同时也更具...",
+            "imgUrl": "https://upload-images.jianshu.io/upload_images/10333354-13335c7be7731117.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+        },{
+            "id": 3,
+            "title": "三国上陆逊追杀刘备，看到一白袍老将转身就跑，陆逊真的怕了吗",
+            "desc": "陆逊看到一白袍老将，转身就跑，这位白袍老将肯定不是薛白袍，况且薛白袍也不老啊。刘备手下符合这个人设的只有赵云了，赵云自从建安五年，公元200年跟...",
+            "imgUrl": "https://upload-images.jianshu.io/upload_images/83636-a96a8c2e963139f0.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+        },{
+            "id": 4,
+            "title": "4款高质量小众APP，每款都很黑科技，请大家低调使用",
+            "desc": "1、优零影视 这是一款非常黑科技的影视播放器，功能非常的强大，采用了X5内核播放设备，可解析三网视频资源。拥有电影、电视、综艺、动漫以及电视直播...",
+            "imgUrl": "https://upload-images.jianshu.io/upload_images/15857452-8528f08c82563c48?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+        },{
+            "id": 5,
+            "title": "Ubuntu PPA 使用指南",
+            "desc": "一篇涵盖了在 Ubuntu 和其他 Linux 发行版中使用 PPA 的几乎所有问题的深入的文章。 如果你一直在使用 Ubuntu 或基于 Ub...",
+            "imgUrl": "https:////upload-images.jianshu.io/upload_images/942697-5207135fb83378c6.png?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+        }],
+        "recommendList": [{
+            "id": 1,
+            "link": "https://www.jianshu.com/mobile/club",
+            "imgUrl": "https://cdn2.jianshu.io/assets/web/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png"
+        },{
+            "id": 2,
+            "link": "https://www.jianshu.com/mobile/books?category_id=284",
+            "imgUrl": "https://cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png"
+        },{
+            "id": 3,
+            "link": "https://www.jianshu.com/publications",
+            "imgUrl": "https://cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png"
+        },{
+            "id": 4,
+            "link": "https://www.jianshu.com/c/e048f1a72e3d?utm_medium=index-banner-s&utm_source=desktop",
+            "imgUrl": "https://cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png"
+        }],
+        "downLoadLink": {
+            "id": 1,
+            "qrImgUrl": "https://cdn2.jianshu.io/assets/web/download-index-side-qrcode-cb13fc9106a478795f8d10f9f632fccf.png",
+            "link": "https://www.jianshu.com/apps?utm_medium=desktop&utm_source=index-aside-click"
+        },
+        "authorList": [
+            {
+                "id": 4790772,
+                "slug": "0f438ff0a55f",
+                "nickname": "茶点故事",
+                "avatar_source": "http://upload.jianshu.io/users/upload_avatars/4790772/388e473c-fe2f-40e0-9301-e357ae8f1b41.jpeg",
+                "total_likes_count": 12585,
+                "total_wordage": 504292,
+                "is_following_user": false
+            },
+            {
+                "id": 7416466,
+                "slug": "e7dd0b3c7b70",
+                "nickname": "老沈1",
+                "avatar_source": "http://upload.jianshu.io/users/upload_avatars/7416466/fc1a1a0d-e3c7-4bca-9720-028c5c9914f3.jpg",
+                "total_likes_count": 658,
+                "total_wordage": 132229,
+                "is_following_user": false
+            },
+            {
+                "id": 3730494,
+                "slug": "ffc565d738a3",
+                "nickname": "格列柯南",
+                "avatar_source": "http://upload.jianshu.io/users/upload_avatars/3730494/4a86a2a7-d5b9-47f1-969a-d8ef4711488b.jpg",
+                "total_likes_count": 43419,
+                "total_wordage": 729088,
+                "is_following_user": false
+            },
+            {
+                "id": 7290998,
+                "slug": "4062aaeba322",
+                "nickname": "念远怀人",
+                "avatar_source": "http://upload.jianshu.io/users/upload_avatars/7290998/f64f5ef0-def0-4b26-beb3-b9d88f060ba0.jpg",
+                "total_likes_count": 13283,
+                "total_wordage": 658524,
+                "is_following_user": false
+            },
+            {
+                "id": 5545154,
+                "slug": "898bb4ca481d",
+                "nickname": "徐林Grace",
+                "avatar_source": "http://upload.jianshu.io/users/upload_avatars/5545154/1a3d5ed6-9ad1-44b3-9457-3e6a29dd1b71.jpg",
+                "total_likes_count": 6243,
+                "total_wordage": 678848,
+                "is_following_user": false
+            }
+        ]
+    }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 // import * as actionCreators from './store/actionCreators.js'
 import { actionCreators } from './store'
@@ -21,7 +22,7 @@ import {
     SearchInfoList,
 } from './style.js';
 
-class Header extends React.Component {
+class Header extends React.PureComponent {
     getListArea() {
         // 解构赋值，从 props 中取出要用的东西
         const {focused, mouseIn, list, page, totalPage, handleMouseEnter, handleMouseLeave, handleChangePage} = this.props;
@@ -64,7 +65,10 @@ class Header extends React.Component {
         return (
             <HeaderWrapper>
                 <Nav>
-                    <Logo />
+                    <Link to="/">
+                        <Logo />
+                    </Link>
+                    
                     <Addition>
                         <Button className="wrightting">
                             <i className="iconfont">&#xe62e;</i> 写文章

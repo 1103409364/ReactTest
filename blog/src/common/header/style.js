@@ -5,9 +5,7 @@ export const HeaderWrapper = styled.div`
     height: 56px;
     border-bottom: 1px solid #f0f0f0;
 `
-export const Logo = styled.a.attrs({
-    href: '/'
-})`
+export const Logo = styled.div`
     float: left;
     height: 56px;
     width: 100px;
@@ -116,6 +114,9 @@ export const SearchInfo = styled.div`
     width: 250px;
     padding: 20px 20px 10px 20px;
     box-shadow: 0 0 4px rgba(0,0,0,.2);
+    background-color: #fff;
+    z-index: 9;
+    // 三角形
     &::before {
         content: '';
         width: 0;
@@ -129,7 +130,7 @@ export const SearchInfo = styled.div`
     &::after {
         content: '';
         -webkit-transform: rotate(45deg);
-        box-shadow: -2px -2px 4px rgba(0,0,0,.2);
+        box-shadow: -2px -2px 2px rgba(0,0,0,.2);
         width: 10px;
         height: 10px;
         background-color: #fff;
