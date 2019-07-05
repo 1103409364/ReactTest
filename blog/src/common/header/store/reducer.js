@@ -1,7 +1,8 @@
 import * as actionTypes from './actionTypes';
 import { fromJS } from 'immutable';
 
-// immutable 库可以生成 immutable 对象，内部的数组也是 immutable 对象。改变的时候也需要是 immutable
+// fromJS 把非 immutable 对象转为 immutable 对象，内部的数组也是 immutable 对象。是深层次的 转换。还有个 List 方法是浅转换
+// 读写 immutable 对象的时候也需要是 immutable 提供的方法
 const defaultState = fromJS({
     focused: false,
     mouseIn: false,

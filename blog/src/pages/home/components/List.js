@@ -11,7 +11,9 @@ class List extends React.PureComponent {
             <div>
                 {
                     articleList.map((item) => (
-                        <Link to="/detail" target="_blank" key={item.get('id')}>
+                        // 跳转的时候,传一个 id 进去,detail 页的 props 就能接收到 id
+                        // 动态路由获取参数
+                        <Link to={`/detail/${item.get('id')}`} target="_blank" key={item.get('id')}>
                             <ListItem>
                                 <img className="pic" src={item.get('imgUrl')} alt="pic" />
                                 <ListContent>

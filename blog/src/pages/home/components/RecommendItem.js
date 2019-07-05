@@ -9,7 +9,7 @@ class Recommend extends React.PureComponent {
                 {
                     this.props.recommendList.map((item) => (
                         <RecommendItem key={item.get('id')}>
-                            <a href={item.get('link')}>
+                            <a href={item.get('link')} target="_blank" rel="noopener noreferrer">
                                 <img alt="pic" src={item.get('imgUrl')} />
                             </a>
                         </RecommendItem>

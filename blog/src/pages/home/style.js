@@ -1,16 +1,24 @@
 import styled from 'styled-components';
 
 export const HomwWrapper = styled.div`
-    overflow: hidden;
+    // overflow: hidden; //和margin: 0 auto; 冲突
     width: 960px;
     margin: 0 auto;
     padding-top: 30px;
+    &::after {
+        content: '';
+        clear: both;
+        display: table;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
 `
 export const HomwLeft = styled.div`
     float: left;
     padding-left: 15px;
     width: 625px;
-    margin: 0 auto;
+    // margin: 0 auto;
     .banner-img {
         width: 625px;
         height: 270px;

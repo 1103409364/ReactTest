@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './common/header';
 import Home from './pages/home';
 import Detail from './pages/detail';
+import Login from './pages/login';
 //  引入全局样式
 import { GlobalStyled } from './style.js';
 import { Iconfont } from './statics/iconfont/iconfont.js';
@@ -17,7 +18,9 @@ function App() {
             <Router>
                 <Header />
                 <Route path='/' exact component={Home}></Route>
-                <Route path='/detail' exact component={Detail}></Route>
+                {/* 要求传递一个 id */}
+                <Route path='/detail/:id' exact component={Detail}></Route>
+                <Route path='/login/' exact component={Login}></Route>
             </Router>
         </Provider>
     );

@@ -25,59 +25,62 @@ import {
 class Header extends React.PureComponent {
     getListArea() {
         // 解构赋值，从 props 中取出要用的东西
-        const {focused, mouseIn, list, page, totalPage, handleMouseEnter, handleMouseLeave, handleChangePage} = this.props;
+        const { focused, mouseIn, list, page, totalPage, handleMouseEnter, handleMouseLeave, handleChangePage } = this.props;
         const newList = list.toJS();
         const pageList = [];
 
-        for(let i = (page - 1) * 10; i < page * 10; i++) {
+        for (let i = (page - 1) * 10; i < page * 10; i++) {
             // 最后一页可能不是满的，第一次是空页
-            if(i < newList.length) {
+            if (i < newList.length) {
                 pageList.push(
                     <SearchInfoItem key={newList[i]}>{newList[i]}</SearchInfoItem>
                 )
             }
         }
         // 满足其中一个条件时，显示 SearchInfo，防止点击 SearchInfo 失焦导致点不中
-        if(focused || mouseIn) {
-            return(
-            <SearchInfo
-                onMouseEnter = {handleMouseEnter}
-                onMouseLeave = {handleMouseLeave}
-            >
-                <SearchInfoTitle>
-                    热门搜索
+        if (focused || mouseIn) {
+            return (
+                <SearchInfo
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    <SearchInfoTitle>
+                        热门搜索
                     <SearchInfoSwitch
-                        onClick = {() => {handleChangePage(page, totalPage, this.spinIcon)}}
-                    ><i 
-                        className="iconfont spin"
-                        ref={icon => this.spinIcon=icon}
-                    >&#xe606;</i>换一批</SearchInfoSwitch>
-                </SearchInfoTitle>
-                <SearchInfoList>
-                    {pageList}
-                </SearchInfoList>
-            </SearchInfo>)
+                            onClick={() => { handleChangePage(page, totalPage, this.spinIcon) }}
+                        ><i
+                            className="iconfont spin"
+                            ref={icon => this.spinIcon = icon}
+                        >&#xe606;</i>换一批</SearchInfoSwitch>
+                    </SearchInfoTitle>
+                    <SearchInfoList>
+                        {pageList}
+                    </SearchInfoList>
+                </SearchInfo>)
         }
     }
 
     render() {
-        const {focused, handleInputFocus, handleInputBlur, list} = this.props; 
+        const { focused, handleInputFocus, handleInputBlur, list } = this.props;
         return (
             <HeaderWrapper>
                 <Nav>
                     <Link to="/">
                         <Logo />
                     </Link>
-                    
+
                     <Addition>
                         <Button className="wrightting">
                             <i className="iconfont">&#xe62e;</i> 写文章
                         </Button>
                         <Button className="reg">注册</Button>
                     </Addition>
-    
+
                     <ItemWrapper>
-                        <NavItem className="left active">首页</NavItem>
+                        <Link to="/">
+                            <NavItem className="left active">首页</NavItem>
+                        </Link>
+
                         <NavItem className="left">下载App</NavItem>
                         <NavItem className="right">登陆</NavItem>
                         <NavItem className="right">
@@ -145,8 +148,8 @@ const mapDispatchToProps = dispatch => {
         // 切换热门搜索
         handleChangePage(page, totalPage, spinIcon) {
             // 使用正则去掉非数字部分,得到数字部分就是角度
-            let originAngle = spinIcon.style.transform.replace(/[^0-9]/ig,'');
-            if(originAngle) {
+            let originAngle = spinIcon.style.transform.replace(/[^0-9]/ig, '');
+            if (originAngle) {
                 originAngle = parseInt(originAngle, 10);
             } else {
                 originAngle = 0;
