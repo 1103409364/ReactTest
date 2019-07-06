@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { actionCreators } from './store';
 import {
     DetailWrapper,
@@ -18,7 +19,7 @@ class Detail extends React.PureComponent {
                 </Header>
                 <Content dangerouslySetInnerHTML={{ __html: this.props.content }} />
             </DetailWrapper>
-        )
+        );
     }
 
     componentDidMount() {
@@ -30,12 +31,12 @@ class Detail extends React.PureComponent {
 const mapStateToProps = state => ({
     title: state.getIn(['detail', 'title']),
     content: state.getIn(['detail', 'content'])
-})
+});
 
 const mapDispatchToProps = dispatch => ({
     getDetail(id) {
         dispatch(actionCreators.getDetail(id))
     }
-})
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Detail);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Detail));

@@ -16,7 +16,7 @@ class DownLoadLink extends React.PureComponent {
                     <h3>下载简书手机App<i className="iconfont icon">&#xe74c;</i></h3>
                     <p>随时随地发现和创作内容</p>
                 </DownLoadInfo>
-            </DownLoadWrapper>)
+            </DownLoadWrapper>);
     }
 }
 

@@ -20,7 +20,7 @@ class Topic extends React.PureComponent {
                     <a href="https://www.jianshu.com/">...更多热门专题</a>
                 </LinkMore>
             </TopicWrapper>
-        )
+        );
     }
 }
 

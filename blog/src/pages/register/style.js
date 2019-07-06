@@ -37,16 +37,16 @@ export const LoginTitle = styled.h4`
 `
 export const SignIn = styled.span`
     font-weight: 700;
-    color: #ea6f5a;
-    border-bottom: 2px solid #ea6f5a;
+    border-bottom: 2px solid #fff;
     float: left;
+    color: #969696;
     margin-right: 30px;
 `
 export const SignUp = styled.span`
     font-weight: 700;
-    border-bottom: 2px solid #fff;
+    color: #ea6f5a;
+    border-bottom: 2px solid #ea6f5a;
     float: left;
-    color: #969696;
 `
 export const Input = styled.input`
     box-sizing: border-box;

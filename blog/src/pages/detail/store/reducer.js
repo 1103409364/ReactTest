@@ -5,7 +5,7 @@ import { fromJS } from 'immutable';
 const defaultState = fromJS({
     'title': '',
     'content': ''
-})
+});
 
 export default (state = defaultState, action) => {
     switch (action.type) {
@@ -14,7 +14,7 @@ export default (state = defaultState, action) => {
                 // title 和 content 都是字符串,也可以不进行转换
                 title: fromJS(action.data.title),
                 content: fromJS(action.data.content)
-            })
+            });
         default:
             return state;
     }

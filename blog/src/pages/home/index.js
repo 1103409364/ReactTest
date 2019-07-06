@@ -60,7 +60,7 @@ class Home extends React.PureComponent {
 const mapStateToProps = state => ({
     bannerImg: state.getIn(['home', 'bannerImg']),
     showScroll: state.getIn(['home', 'showScroll'])
-})
+});
 
 const mapDispatchToProps = dispatch => ({
     getHomeData() {
@@ -74,6 +74,6 @@ const mapDispatchToProps = dispatch => ({
             dispatch(actionCreators.toggleTopShow(false))
         }
     }
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

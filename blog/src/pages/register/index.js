@@ -13,16 +13,15 @@ import {
     Button,
 } from './style.js'
 
-class Login extends React.PureComponent {
+class Register extends React.PureComponent {
     render() {
-        const { login, isLogin } = this.props;
-        // 未登陆渲染登陆页,已登陆,跳转到首页
+        const { register, isLogin } = this.props;
         if (!isLogin) {
             return (
                 <LoginWrapper>
                     <LoginBox>
                         <LoginTitle>
-                            <Link  to="/login">
+                            <Link to="/login">
                                 <SignIn>登陆</SignIn>
                             </Link>
                             <Link to="/register">
@@ -32,8 +31,8 @@ class Login extends React.PureComponent {
                         <Input placeholder="账号" ref={input => this.account = input} />
                         <Input placeholder="密码" type="password" ref={input => this.password = input} />
                         <Button
-                            onClick={() => login(this.account, this.password)}
-                        >登陆</Button>
+                            onClick={() => register(this.account, this.password)}
+                        >注册</Button>
                     </LoginBox>
                 </LoginWrapper>
             )
@@ -48,9 +47,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    login(account, password) {
-        dispatch(actionCreators.login(account.value, password.value));
+    register(account, password) {
+        dispatch(actionCreators.register(account.value, password.value));
     }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Register);

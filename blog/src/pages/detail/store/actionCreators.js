@@ -4,7 +4,7 @@ import * as actionTypes from './actionTypes';
 const changeDetail = (data) => ({
     type: actionTypes.CHANGE_DETAIL,
     data
-})
+});
 
 export const getDetail = (id) => {
     return (dispatch) => {
@@ -12,6 +12,8 @@ export const getDetail = (id) => {
         axios.get('/api/detail.json?id=' + id).then(res => {
             const result = res.data.data;
             dispatch(changeDetail(result));
-        })
+        }).catch(()=>{
+            console.log('error');
+        });
     }
 }

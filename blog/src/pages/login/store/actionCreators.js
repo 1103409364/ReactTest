@@ -1,17 +1,26 @@
 import axios from 'axios';
 import * as actionTypes from './actionTypes';
 
-const changeDetail = (data) => ({
-    type: actionTypes.CHANGE_DETAIL,
-    data
-})
+const changeLogin= () => ({
+    type: actionTypes.CHANGE_LOGIN,
+    isLogin: true
+});
 
-export const getDetail = (id) => {
+export const logout= () => ({
+    type: actionTypes.LOGOUT,
+    isLogin: false
+});
+
+export const login = (account, password) => {
     return (dispatch) => {
-        // 实际请求的时候,会给后端不同的 id 参数,后端根据不同的 id 返回内容
-        axios.get('/api/detail.json?id=' + id).then(res => {
+        // 实际应该用 post
+        axios.get('/api/login.json?account=' + account + '&password=' + password).then(res => {
             const result = res.data.data;
-            dispatch(changeDetail(result));
-        })
+            if (result) {
+                dispatch(changeLogin());
+            } else {
+                alert('登陆失败!');
+            }
+        });
     }
 }
