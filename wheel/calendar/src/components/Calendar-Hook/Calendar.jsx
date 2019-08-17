@@ -21,10 +21,9 @@ function Calendar(props) {
 
     // 计算某月的天数,计算方法：下月的上一天,也就是本月的最后一天，就是天数
     const getMonDays = (Y, M) => {
-        // 先得到下一个月第一天的date对象
-        let d = new Date(Y, M + 1, 1);
-        // d-1毫秒就是这月的最后一天
-        return (new Date(d - 1)).getDate();
+        // 下月的第 0 天就是这个月的最后一天
+        let d = new Date(Y, M + 1, 0);
+        return d.getDate();
     }
 
     // 计算某月一号是星期几
